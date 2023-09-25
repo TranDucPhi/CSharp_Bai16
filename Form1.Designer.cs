@@ -43,7 +43,7 @@
             this.btnexit = new System.Windows.Forms.Button();
             this.btnclear = new System.Windows.Forms.Button();
             this.btndisplay = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkvisible = new System.Windows.Forms.CheckBox();
             this.picSmall = new System.Windows.Forms.PictureBox();
             this.picBig = new System.Windows.Forms.PictureBox();
             this.lblMessage = new System.Windows.Forms.Label();
@@ -74,7 +74,8 @@
             this.txtMessage.Location = new System.Drawing.Point(158, 76);
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(324, 20);
-            this.txtMessage.TabIndex = 1;
+            this.txtMessage.TabIndex = 2;
+            this.txtMessage.Text = "Client";
             // 
             // txtName
             // 
@@ -82,7 +83,8 @@
             this.txtName.Location = new System.Drawing.Point(158, 24);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(324, 20);
-            this.txtName.TabIndex = 1;
+            this.txtName.TabIndex = 2;
+            this.txtName.Text = "Ares";
             // 
             // label2
             // 
@@ -112,7 +114,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 125);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(153, 163);
-            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Color";
             // 
@@ -127,6 +129,7 @@
             this.radBlack.TabStop = true;
             this.radBlack.Text = "Black";
             this.radBlack.UseVisualStyleBackColor = true;
+            this.radBlack.CheckedChanged += new System.EventHandler(this.radBlack_CheckedChanged);
             // 
             // radBlue
             // 
@@ -140,6 +143,7 @@
             this.radBlue.TabStop = true;
             this.radBlue.Text = "Blue";
             this.radBlue.UseVisualStyleBackColor = true;
+            this.radBlue.CheckedChanged += new System.EventHandler(this.radBlue_CheckedChanged);
             // 
             // radGreen
             // 
@@ -153,6 +157,7 @@
             this.radGreen.TabStop = true;
             this.radGreen.Text = "Green";
             this.radGreen.UseVisualStyleBackColor = true;
+            this.radGreen.CheckedChanged += new System.EventHandler(this.radGreen_CheckedChanged);
             // 
             // radRed
             // 
@@ -166,6 +171,7 @@
             this.radRed.TabStop = true;
             this.radRed.Text = "Red";
             this.radRed.UseVisualStyleBackColor = true;
+            this.radRed.CheckedChanged += new System.EventHandler(this.radRed_CheckedChanged);
             // 
             // groupBox3
             // 
@@ -176,7 +182,7 @@
             this.groupBox3.Location = new System.Drawing.Point(404, 125);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(154, 163);
-            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Action";
             // 
@@ -190,6 +196,7 @@
             this.btnexit.TabIndex = 0;
             this.btnexit.Text = "E&xit";
             this.btnexit.UseVisualStyleBackColor = true;
+            this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
             // 
             // btnclear
             // 
@@ -200,6 +207,7 @@
             this.btnclear.TabIndex = 0;
             this.btnclear.Text = "&Clear";
             this.btnclear.UseVisualStyleBackColor = true;
+            this.btnclear.Click += new System.EventHandler(this.btnclear_Click);
             // 
             // btndisplay
             // 
@@ -212,15 +220,16 @@
             this.btndisplay.UseVisualStyleBackColor = true;
             this.btndisplay.Click += new System.EventHandler(this.btndisplay_Click);
             // 
-            // checkBox1
+            // chkvisible
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(232, 125);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(102, 17);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.Text = "Message Visible";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkvisible.AutoSize = true;
+            this.chkvisible.Location = new System.Drawing.Point(232, 125);
+            this.chkvisible.Name = "chkvisible";
+            this.chkvisible.Size = new System.Drawing.Size(102, 17);
+            this.chkvisible.TabIndex = 1;
+            this.chkvisible.Text = "Message Visible";
+            this.chkvisible.UseVisualStyleBackColor = true;
+            this.chkvisible.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // picSmall
             // 
@@ -231,25 +240,28 @@
             this.picSmall.TabIndex = 4;
             this.picSmall.TabStop = false;
             this.picSmall.Visible = false;
+            this.picSmall.Click += new System.EventHandler(this.picSmall_Click);
             this.picSmall.MouseHover += new System.EventHandler(this.picSmall_MouseHover);
             // 
             // picBig
             // 
             this.picBig.Image = global::CSharp_Bai16.Properties.Resources.img1;
-            this.picBig.Location = new System.Drawing.Point(222, 194);
+            this.picBig.Location = new System.Drawing.Point(222, 256);
             this.picBig.Name = "picBig";
             this.picBig.Size = new System.Drawing.Size(120, 108);
             this.picBig.TabIndex = 4;
             this.picBig.TabStop = false;
+            this.picBig.Click += new System.EventHandler(this.picBig_Click_1);
             this.picBig.MouseHover += new System.EventHandler(this.picBig_MouseHover);
             // 
             // lblMessage
             // 
             this.lblMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lblMessage.Location = new System.Drawing.Point(-3, 307);
+            this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessage.Location = new System.Drawing.Point(-2, 376);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(578, 49);
-            this.lblMessage.TabIndex = 5;
+            this.lblMessage.TabIndex = 4;
             // 
             // Form1
             // 
@@ -257,11 +269,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnexit;
-            this.ClientSize = new System.Drawing.Size(570, 355);
+            this.ClientSize = new System.Drawing.Size(570, 423);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.picBig);
             this.Controls.Add(this.picSmall);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.chkvisible);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -293,7 +305,7 @@
         private System.Windows.Forms.RadioButton radBlue;
         private System.Windows.Forms.RadioButton radGreen;
         private System.Windows.Forms.RadioButton radRed;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkvisible;
         private System.Windows.Forms.PictureBox picSmall;
         private System.Windows.Forms.PictureBox picBig;
         private System.Windows.Forms.Button btnexit;
